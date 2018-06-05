@@ -1,0 +1,29 @@
+{
+  "name": "blockchain-nodejs-example",
+  "version": "0.1.0",
+  "description": "A exmaple blockchain implemented in NodeJS",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/widgetapps/blockchain-nodejs-example.git"
+  },
+  "author": "Darryl Patterson",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.0",
+    "compression": "^1.7.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "glob": "^7.1.2",
+    "helmet": "^3.9.0",
+    "method-override": "^2.3.10",
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+  }
+}
