@@ -13,7 +13,13 @@ var config = require('./config/config');
 // Init the express application
 var app = require('./config/express')();
 
-// Initialize the arrays. The chain should come from some kind of DB eventually. For now, great the genesis block.
+var port = config.port;
+
+if (Number.isInteger(process.argv[2]) && process.argv[2] > 1024 && process.argv[2] < 65535) {
+    port = process.argv[2];
+}
+
+// Initialize the arrays. The chain should come from some kind of DB eventually. For now, create the genesis block.
 app.set('miner', process.env.MINER || 'WIDGETAPPS');
 app.set('transactions', []);
 app.set('chain', [{

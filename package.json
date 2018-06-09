@@ -24,6 +24,5 @@
     "method-override": "^2.3.10",
     "request": "^2.85.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
