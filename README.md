@@ -12,10 +12,10 @@ node client.js [port]
 ```
 
 The `port` argument is optional. If you do not declare the port, then 3101 is used. If you use
-a process manager (like PM2), you can pass on the port & IP via environment variable.
+a process manager (like PM2), you can pass on the port & IP via environment variables.
 
 You'll want to get multiple instances of the client running, then you can use your favourite
-URL request/response software (Postman, cURL, etc) to hit teh clients via RESTful calls.
+URL request/response software (Postman, cURL, etc) to hit the clients via RESTful calls.
 
 These are the calls you can make:
 
@@ -27,5 +27,5 @@ POST /nodes/register { "nodes": ["ip:port"] }
 GET /consensus
 ```
 
-Once you have intances installed, you should send the `POST /nodes/register` to each running
+Once you have instances installed, you should send the `POST /nodes/register` to each running
 node with the list of nodes you are running.
