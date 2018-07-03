@@ -1,13 +1,13 @@
 'use strict';
 
-var blockchain = require('../lib/blockchain.server.lib');
+let blockchain = require('../lib/blockchain.server.lib');
 
 exports.index = function(req, res) {
-    res.json({message: 'Hi there, I\'m a GeeqChain node. Isn\'t that weird?'});
+    res.json({message: 'Hi there, I\'m an ExampleChain node. Isn\'t that weird?'});
 };
 
 exports.newTransaction = function (req, res) {
-    var index = blockchain.newTransaction(req.app, req.body.sender, req.body.recipient, req.body.amount);
+    let index = blockchain.newTransaction(req.app, req.body.sender, req.body.recipient, req.body.amount);
     res.json({
         message: 'Transaction will be added to Block ' + index
     });

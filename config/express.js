@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-var express = require('express'),
+let express = require('express'),
     bodyParser = require('body-parser'),
     compress = require('compression'),
     methodOverride = require('method-override'),
@@ -15,7 +15,7 @@ var express = require('express'),
 
 module.exports = function() {
     // Initialize express app
-    var app = express();
+    let app = express();
 
     // Setting application local variables
     app.locals.title = config.app.title;

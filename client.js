@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-var config = require('./config/config');
+let config = require('./config/config');
 
 /**
  * Main application entry file.
@@ -11,16 +11,17 @@ var config = require('./config/config');
  */
 
 // Init the express application
-var app = require('./config/express')();
+let app = require('./config/express')();
 
-var port = config.port;
+let port = config.port;
 
+// Check to see if args came in from CLI. If so, use them as the port.
 if (Number.isInteger(process.argv[2]) && process.argv[2] > 1024 && process.argv[2] < 65535) {
     port = process.argv[2];
 }
 
 // Initialize the arrays. The chain should come from some kind of DB eventually. For now, create the genesis block.
-app.set('miner', process.env.MINER || 'WIDGETAPPS');
+app.set('miner', process.env.MINER || 'DEFAULT MINER');
 app.set('transactions', []);
 app.set('chain', [{
     'index': 1,
@@ -29,13 +30,13 @@ app.set('chain', [{
     'proof': 100,
     'previous_hash': 1
 }]);
-app.set('nodes', ['104.198.238.183:3000','104.198.238.183:3001','104.198.238.183:3002','104.198.238.183:3003','104.198.238.183:3004','104.198.238.183:3005']);
+app.set('nodes', ['127.0.0.1:3000','127.0.0.1:3001','127.0.0.1:3002']);
 
 // Start the app by listening on <port>
 app.listen(config.port, config.ip);
 
 // Expose app
-var exports = module.exports = app;
+let exports = module.exports = app;
 
 // Logging initialization
-console.log('GeeqChain node started on port ' + config.port + ' with IP ' + config.ip);
+console.log('ExampleChain node started on port ' + config.port + ' with IP ' + config.ip);
