@@ -36,7 +36,7 @@ app.set('nodes', ['127.0.0.1:3000','127.0.0.1:3001','127.0.0.1:3002']);
 app.listen(config.port, config.ip);
 
 // Expose app
-let exports = module.exports = app;
+var exports = module.exports = app;
 
 // Logging initialization
 console.log('ExampleChain node started on port ' + config.port + ' with IP ' + config.ip);
