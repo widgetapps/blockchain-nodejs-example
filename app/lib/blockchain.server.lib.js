@@ -30,6 +30,7 @@ exports.mine = function(app) {
     let previousHash = hashBlock(lastBlock);
     let block = newBlock(app, proof, previousHash);
 
+    // TODO: Save the miner in the block? Or maybe we can derive from the transaction sender of 0 (zero)
     return {
         'message': "New Block Forged",
         'index': block.index,
@@ -138,6 +139,7 @@ function validChain(chain) {
 }
 
 function newTransaction(app, sender, recipient, amount) {
+    // TODO: Each transaction needs a signature using the private key of the sender. Signature must be sent by the client as the node doesn't have the private key. NEVER send the private key, only the transaction signature.
     let transactions = app.get('transactions');
     console.log('New Transaction');
 
@@ -193,6 +195,7 @@ function getLastBlock(app) {
 }
 
 function proofOfWork(lastProof) {
+    // TODO: Change the proof to nonce.
     let proof = 0;
     while (validProof(lastProof, proof) === false) {
         proof += 1;
